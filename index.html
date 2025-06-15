@@ -52,20 +52,64 @@
         box-shadow: 0 0 15px rgba(255, 105, 180, 0.671);
         z-index: 10;
         user-select: none;
+  .two button {
+       
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
       }
+
+      .two #playButton {
+        background-color: #af4c96;
+        color: #fff;
+        position: relative;
+        top: 100px;
+        left: 100px;
+      }
+      .two #stopButton {
+        background-color: #f44336;
+        color: #fff;
+        position: relative;
+        top: 100px;
+        left: 200px;
+      }
+      .two button:not(#playButton) {
+        background-color: hotpink;
+        color: #fff;
+      }
+
+      
+
     </style>
   </head>
   <body>
     <audio autoplay id="bgmusic" style="display: none">
       <source src="Connie Francis - Pretty Little Baby.mp3" type="audio/mp3" />
-
     </audio>
 
     <canvas id="heart"></canvas>
     <div id="message">My heart beats only for you</div>
-    <button onclick="nextMessage()">💌 Next Message</button>
-
+    <div class="two">
+      <button onclick="nextMessage()">💌 Next Message</button>
+      <button id="playButton">🎵 Play</button>
+      <button id="stopButton">🔇 Mute</button>
+    </div>
     <script>
+      const audio = document.getElementById("bgmusic");
+      const playButton = document.getElementById("playButton");
+
+      playButton.addEventListener("click", function () {
+        audio.play();
+      });
+      const audio2 = document.getElementById("bgmusic");
+      const stopButton = document.getElementById("stopButton");
+
+      stopButton.addEventListener("click", function () {
+        audio2.pause();
+        audio2.currentTime = 0;
+      });
       const messages = [
         "Forever yours 💘",
         "You're my favorite chapter in life 💝",
