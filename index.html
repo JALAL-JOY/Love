@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/jpeg" href="me.jpg" />
     <title>Heart for Chaimae 🌸✨</title>
-    <style>
+     <style>
       html,
       body {
         margin: 0;
@@ -37,46 +37,69 @@
         text-shadow: 0 0 5px pink, 0 0 10px rgb(255, 0, 128), 0 0 20px deeppink;
       }
 
-      button {
-        position: absolute;
+      /* Updated button container styles */
+      .two {
+        position: fixed;
         bottom: 30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      /* Message button centered in middle */
+      #messageButton {
+        position: fixed;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
-        background-color: hotpink;
-        color: white;
+        transform: translate(-50%, -50%);
+        padding: 15px 30px;
         border: none;
-        border-radius: 20px;
-        padding: 10px 20px;
+        border-radius: 30px;
         cursor: pointer;
-        font-size: 16px;
-        box-shadow: 0 0 15px rgba(255, 105, 180, 0.671);
+        font-size: 20px;
+        background-color: #ff69b4;
+        color: white;
+        box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
         z-index: 10;
         user-select: none;
+        transition: transform 0.3s, box-shadow 0.3s;
       }
+
+      #messageButton:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 35px rgba(255, 20, 147, 0.9);
+      }
+
+      /* Other buttons */
       .two button {
         padding: 10px 20px;
         border: none;
-        border-radius: 10px;
+        border-radius: 20px;
         cursor: pointer;
         font-size: 16px;
+        background-color: hotpink;
+        color: white;
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.671);
+        z-index: 10;
+        user-select: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .two button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.9);
       }
 
       .two #playButton {
         background-color: #af4c96;
         color: #fff;
-        position: relative;
-        top: 100px;
-        left: 100px;
       }
+
       .two #stopButton {
         background-color: #f44336;
-        color: #fff;
-        position: relative;
-        top: 100px;
-        left: 200px;
-      }
-      .two button:not(#playButton) {
-        background-color: hotpink;
         color: #fff;
       }
     </style>
